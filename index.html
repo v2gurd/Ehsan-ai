@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080910"><meta name="description" content="Ehsan AI؛ دستیار هوشمند فارسی">
+<title>Ehsan AI | هوش مصنوعی</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080910;--panel:#10121d;--panel2:#151827;--line:rgba(255,255,255,.085);--muted:#9297ad;--text:#f5f6ff;--violet:#8b5cf6;--cyan:#55d6ff;--glow:rgba(139,92,246,.28)}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,rgba(103,62,205,.22),transparent 36%),radial-gradient(ellipse at 10% 80%,rgba(0,173,219,.09),transparent 32%),var(--bg);color:var(--text);font-family:Vazirmatn,system-ui,sans-serif;min-height:100vh}
+button,textarea{font:inherit}button{cursor:pointer;color:inherit}.app{display:grid;grid-template-columns:270px 1fr;min-height:100vh;max-width:1600px;margin:auto;padding:18px;gap:18px}
+.sidebar,.main{border:1px solid var(--line);background:rgba(13,15,25,.82);backdrop-filter:blur(22px);border-radius:24px}.sidebar{padding:22px 16px;display:flex;flex-direction:column;gap:22px;height:calc(100vh - 36px);position:sticky;top:18px}
+.brand{display:flex;align-items:center;gap:12px;padding:4px 8px}.logo{width:43px;height:43px;border-radius:15px;background:linear-gradient(135deg,#a78bfa,#5b5ce2 55%,#31c7e8);display:grid;place-items:center;font-weight:900;color:white;box-shadow:0 8px 30px var(--glow);font-size:20px}.brand strong{font-size:18px;letter-spacing:.2px}.brand small{display:block;color:var(--muted);font-size:10px;direction:ltr;text-align:right;letter-spacing:2px}
+.newchat{border:1px solid rgba(167,139,250,.35);background:linear-gradient(110deg,rgba(139,92,246,.2),rgba(85,214,255,.08));border-radius:14px;padding:12px 14px;text-align:right;font-weight:700}
+.section-label{font-size:10px;color:#777e96;padding:0 10px;margin-bottom:-12px;letter-spacing:1.2px}.nav{display:grid;gap:7px}.nav button{border:0;background:transparent;color:#aeb2c5;padding:11px 12px;border-radius:12px;text-align:right;display:flex;align-items:center;gap:11px}.nav button.active,.nav button:hover{background:rgba(255,255,255,.065);color:white}.nav i{font-style:normal;width:22px;text-align:center;color:#b69cff;font-size:17px}
+.side-bottom{margin-top:auto;border-top:1px solid var(--line);padding-top:16px}.status{display:flex;align-items:center;gap:9px;color:#a9aec0;font-size:12px;padding:8px}.dot{width:7px;height:7px;background:#48d6a0;border-radius:50%;box-shadow:0 0 12px #48d6a0}
+.main{min-height:calc(100vh - 36px);display:flex;flex-direction:column;overflow:hidden;position:relative}.topbar{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;border-bottom:1px solid var(--line)}.crumb{color:#a5a9bb;font-size:12px}.model{border:1px solid var(--line);border-radius:30px;padding:7px 12px;color:#c9c5ff;font-size:11px;background:rgba(139,92,246,.1)}
+.content{width:min(900px,100%);margin:0 auto;padding:42px 28px 20px;flex:1;display:flex;flex-direction:column}.hero{text-align:center;margin:20px auto 32px;max-width:680px}.orb{width:88px;height:88px;border-radius:28px;margin:0 auto 22px;position:relative;background:radial-gradient(circle at 35% 30%,#d7caff,#8b5cf6 36%,#333c98 72%,#101322);box-shadow:0 0 65px rgba(139,92,246,.3),inset 0 0 20px rgba(255,255,255,.35);animation:float 5s ease-in-out infinite}.orb:before,.orb:after{content:"";position:absolute;border:1px solid rgba(181,162,255,.45);inset:-9px;border-radius:34px;transform:rotate(22deg)}.orb:after{inset:-17px;border-color:rgba(85,214,255,.22);transform:rotate(-25deg)}@keyframes float{50%{transform:translateY(-8px) rotate(4deg)}}h1{font-size:clamp(30px,5vw,48px);margin:0 0 12px;font-weight:900;letter-spacing:-1.5px}h1 span{background:linear-gradient(90deg,#c4b5fd,#7dd3fc);background-clip:text;color:transparent}.hero p{color:#9da2b7;font-size:14px;line-height:2;margin:0}
+.suggestions{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin:0 auto 28px;width:min(680px,100%)}.suggestion{border:1px solid var(--line);background:linear-gradient(140deg,rgba(255,255,255,.045),rgba(255,255,255,.015));padding:14px 15px;border-radius:16px;text-align:right;transition:.25s}.suggestion:hover{border-color:rgba(167,139,250,.5);transform:translateY(-2px);background:rgba(139,92,246,.09)}.suggestion b{display:block;font-size:12px;margin-bottom:5px}.suggestion small{color:#8e94aa;font-size:10px}
+.chat{display:flex;flex-direction:column;gap:18px;padding-bottom:18px}.message{display:flex;gap:12px;align-items:flex-start;max-width:90%;animation:appear .25s ease}.message.user{align-self:flex-start;flex-direction:row-reverse}.message.ai{align-self:flex-end}.avatar{width:31px;height:31px;flex:0 0 31px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,#8b5cf6,#315d9e);font-size:12px;font-weight:800}.user .avatar{background:#252a3a;color:#c9cde0}.bubble{padding:12px 15px;border:1px solid var(--line);background:#121522;border-radius:16px 4px 16px 16px;line-height:1.95;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.user .bubble{background:rgba(139,92,246,.13);border-color:rgba(139,92,246,.18);border-radius:4px 16px 16px 16px}.typing{color:#a8a2ca;font-size:12px;padding:8px 12px}
+.composer-wrap{position:sticky;bottom:0;padding:14px 24px 20px;background:linear-gradient(transparent,rgba(13,15,25,.97) 20%)}.composer{width:min(850px,100%);margin:auto;border:1px solid rgba(167,139,250,.25);background:#111421;border-radius:20px;padding:12px 13px 9px;box-shadow:0 10px 40px rgba(0,0,0,.25),0 0 30px rgba(139,92,246,.06)}.composer textarea{width:100%;resize:none;min-height:48px;max-height:150px;border:0;outline:0;background:transparent;color:white;padding:7px 9px;font-size:13px;line-height:1.8}.composer textarea::placeholder{color:#777e95}.composer-foot{display:flex;justify-content:space-between;align-items:center;padding:3px 3px 0}.hint{color:#747b92;font-size:10px}.send{border:0;border-radius:12px;padding:9px 16px;background:linear-gradient(110deg,#8b5cf6,#4e83df);font-size:12px;font-weight:800;box-shadow:0 5px 18px rgba(112,92,230,.25)}.send:disabled{opacity:.5;cursor:not-allowed}.fineprint{text-align:center;color:#6f758b;font-size:9px;margin-top:10px}
+.mobile-head{display:none}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#25283a;border:1px solid var(--line);padding:10px 16px;border-radius:12px;font-size:12px;z-index:10;box-shadow:0 10px 30px #0008}
+@keyframes appear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@media(max-width:760px){.app{display:block;padding:8px}.sidebar{display:none}.main{min-height:calc(100dvh - 16px);border-radius:20px}.topbar{padding:14px 16px}.content{padding:28px 16px 10px}.hero{margin:25px auto 28px}.orb{width:72px;height:72px;border-radius:23px}.suggestions{gap:8px}.suggestion{padding:12px;border-radius:13px}.suggestion b{font-size:11px}.suggestion small{font-size:9px}.composer-wrap{padding:10px 12px 15px}.message{max-width:96%}.mobile-head{display:block}.crumb{font-size:11px}}
+</style></head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">E</div><div><strong>Ehsan AI</strong><small>INTELLIGENCE, REIMAGINED</small></div></div>
+  <button class="newchat" id="newChat">＋ گفت‌وگوی جدید</button>
+  <div class="section-label">WORKSPACE</div>
+  <nav class="nav">
+    <button class="active"><i>✧</i> دستیار هوشمند</button>
+    <button id="historyBtn"><i>◷</i> تاریخچه گفتگو</button>
+    <button id="clearBtn"><i>⌫</i> پاک‌سازی گفتگو</button>
+  </nav>
+  <div class="side-bottom"><div class="status"><span class="dot"></span> اتصال هوش مصنوعی آماده است</div><div class="status">✦ &nbsp; قدرت‌گرفته از Gemini API</div></div>
+</aside>
+<main class="main">
+  <header class="topbar"><div class="crumb"><span class="mobile-head">✦ &nbsp; Ehsan AI</span><span class="desktop-head">فضای هوشمند / دستیار</span></div><div class="model">✦ Gemini 3.8 Flash</div></header>
+  <section class="content">
+    <div class="hero" id="hero"><div class="orb"></div><h1>سلام، من <span>Ehsan AI</span> هستم.</h1><p>ایده‌هات رو به واقعیت تبدیل کنیم.<br>هر چیزی توی ذهنته بپرس؛ از یک سؤال ساده تا پیچیده‌ترین ایده‌ها.</p></div>
+    <div class="suggestions" id="suggestions">
+      <button class="suggestion" data-prompt="هوش مصنوعی را ساده و دقیق برایم توضیح بده."><b>✧ هوش مصنوعی را توضیح بده</b><small>از پایه تا مفاهیم پیشرفته</small></button>
+      <button class="suggestion" data-prompt="برای من یک برنامه یادگیری برنامه‌نویسی ۳۰ روزه طراحی کن."><b>⌘ برنامه‌نویسی را یاد بگیر</b><small>یک مسیر یادگیری هوشمند</small></button>
+      <button class="suggestion" data-prompt="برای یک کسب‌وکار خلاقانه ۵ ایده متفاوت پیشنهاد بده."><b>◈ ایده‌پردازی خلاقانه</b><small>ایده‌هایی خارج از چارچوب</small></button>
+      <button class="suggestion" data-prompt="یک متن حرفه‌ای و جذاب برای معرفی یک محصول بنویس."><b>✎ تولید محتوا</b><small>متن، کپشن و سناریو</small></button>
+    </div>
+    <div class="chat" id="chat" aria-live="polite"></div>
+  </section>
+  <div class="composer-wrap"><div class="composer"><textarea id="prompt" rows="1" placeholder="پیامت رو برای Ehsan AI بنویس..." aria-label="پیام"></textarea><div class="composer-foot"><span class="hint">Enter برای ارسال · Shift + Enter برای خط جدید</span><button class="send" id="send">ارسال پیام ↗</button></div></div><div class="fineprint">Ehsan AI ممکن است اشتباه کند؛ پاسخ‌های مهم را بررسی کن.</div></div>
+</main></div>
+<script>
+const CONFIG={supabaseUrl:"https://psvesfkxtmlnjyhphsfs.supabase.co",supabaseAnonKey:"sb_publishable_QClWgLVOmPGwPK_kTsL5UA_L0cNqJ4H",functionName:"ehsan-ai"};
+const chat=document.getElementById('chat'),input=document.getElementById('prompt'),send=document.getElementById('send'),hero=document.getElementById('hero'),suggestions=document.getElementById('suggestions');
+let messages=[],busy=false;
+function addMessage(role,text){const wrap=document.createElement('div');wrap.className='message '+(role==='user'?'user':'ai');const av=document.createElement('div');av.className='avatar';av.textContent=role==='user'?'ش':'E';const bubble=document.createElement('div');bubble.className='bubble';bubble.textContent=text;wrap.append(av,bubble);chat.append(wrap);wrap.scrollIntoView({behavior:'smooth',block:'nearest'});return bubble}
+function toast(msg){const t=document.createElement('div');t.className='toast';t.textContent=msg;document.body.append(t);setTimeout(()=>t.remove(),3200)}
+function reset(){messages=[];chat.innerHTML='';hero.hidden=false;suggestions.hidden=false;input.focus()}
+async function submit(text){text=(text??input.value).trim();if(!text||busy)return;busy=true;send.disabled=true;hero.hidden=true;suggestions.hidden=true;input.value='';input.style.height='auto';messages.push({role:'user',content:text});addMessage('user',text);const waiting=addMessage('assistant','در حال فکر کردن...');waiting.classList.add('typing');
+try{const response=await fetch(`${CONFIG.supabaseUrl}/functions/v1/${CONFIG.functionName}`,{method:'POST',headers:{'Content-Type':'application/json','apikey':CONFIG.supabaseAnonKey,'Authorization':`Bearer ${CONFIG.supabaseAnonKey}`},body:JSON.stringify({messages})});const data=await response.json();if(!response.ok)throw new Error(data.error||'ارتباط با هوش مصنوعی برقرار نشد.');waiting.classList.remove('typing');waiting.textContent=data.answer;messages.push({role:'assistant',content:data.answer});}
+catch(err){waiting.remove();addMessage('assistant','خطا: '+err.message);toast('ارسال پیام ناموفق بود');}
+finally{busy=false;send.disabled=false;input.focus()}}
+send.addEventListener('click',()=>submit());input.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();submit()}});input.addEventListener('input',()=>{input.style.height='auto';input.style.height=Math.min(input.scrollHeight,150)+'px'});
+document.querySelectorAll('[data-prompt]').forEach(b=>b.addEventListener('click',()=>submit(b.dataset.prompt)));
+document.getElementById('newChat').addEventListener('click',reset);document.getElementById('clearBtn').addEventListener('click',reset);
+document.getElementById('historyBtn').addEventListener('click',()=>toast('ذخیره‌سازی تاریخچه در نسخه بعدی اضافه می‌شود.'));
+</script></body></html>
