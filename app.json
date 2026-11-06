@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Ehsan AI",
+    "slug": "ehsan-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#090812"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ehsanai.app"
+    },
+    "android": {
+      "package": "com.ehsanai.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#090812"
+      },
+      "edgeToEdgeEnabled": true
+    }
+  }
+}
